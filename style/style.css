@@ -1,0 +1,286 @@
+
+.mainpage {
+
+}
+
+.header{
+    display: flex; /*turns on Flexbox.*/
+    justify-content: space-between; /*puts the spare space between the logo and button, pushing them to opposite ends.*/
+    align-items: center; /* Centre the logo and button vertically */
+    padding: 16px;
+}
+
+/*Turn on Flexbox*/
+button { /*refer to the 3 dot menu*/ /*3 separate parts: Dots, background, border*/
+    width: 24px;
+    height: 24px;
+    background-color: white;
+    border: none;
+    display: flex; /*Turn on Flexbox*/
+    justify-content: center;
+    align-items: center;
+}
+
+nav a { /*selects the links inside the navigation.*/
+
+}
+
+main{
+    /*width: 211px;*/
+    /*height: 104px;*/ /*this is being removed ,Let the text box grow naturally if the paragraph wraps onto more lines.*/
+    text-align: center;
+    margin-top: 103px;
+
+}
+
+.recipe-text { /*it groups only the heading and paragraph.*/
+    margin-bottom: 30px; 
+    margin-left: 55px;
+    margin-right: 55px;
+}
+
+.recipe-text h1 {
+    font-family: Arial, sans-serif;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 39.6px;
+    letter-spacing: -0.8px;
+}
+
+.recipe-text p {
+    margin-top: 15px;
+    font-family: Arial, sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    letter-spacing: 0px;
+}
+
+main img{
+    width: 256px;
+    height: 284px;
+}
+
+.scroll-arrow {
+    display: none;
+}
+
+nav { /*To hide the whole navigation area,Think of nav as the box and the links as items inside it. */
+    display: none; /* Hide navigation links on small screens */
+}
+
+.menu__item--meatball {
+    position: relative; /*makes the menu container the reference box.*/
+}
+
+.menu__item--meatball nav { /*This allows the navigation to display, while <details> controls whether it’s open or closed.This more specific selector overrides nav { display: none; }*/
+    display: block;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    margin-top: 0;
+    background-color: white;
+    border: 1px solid #ddd; /* 1px is line thickness solid is a continuous line #dd is a light grey color*/
+}
+
+.menu__item--meatball summary {
+    list-style: none;/* remove the triangle*/
+    width: 42px;
+    height: 42px; /*requires a clickable area of at least 42 × 42px.*/
+    display: flex; /*Turn on Flex, centre the dots inside that area*/
+    justify-content: center; 
+    align-items: center;
+    font-size: 28px;
+    font-weight: 700;
+    color: black;
+}
+.menu__item--meatball nav a:hover,
+.menu__item--meatball nav a:focus-visible {
+    background-color: #eee;
+}
+
+.menu__item--meatball nav ul { /*remove the bullets beside the navigation links.*/
+    list-style: none;
+    margin: 0;/*remove the list’s default margin and padding.*/
+    padding: 0;
+}
+
+.menu__item--meatball nav a { /*make each link easy to tap*/
+    display: flex;
+    align-items: center;
+    min-width: 42px;
+    min-height: 42px;
+    text-decoration: none;
+    font-family: Arial, sans-serif ;
+    font-size: 14px;
+    font-weight: 600;
+    color: black;
+    justify-content: flex-end; /*This moves each word to the right of its clickable box.*/
+    padding: 0 16px;/* 0 is above and below and 16px on the left and right*/
+}
+
+.menu__item--meatball nav li + li { /*li + li selects a list item that comes immediately after another list item.*/
+    border-top: 1px solid #ddd;
+}
+
+.desktop-nav {
+    display: none;
+}
+
+
+@media (min-width: 768px) { /*we specify the condition by first defining what the rule should be in relation to*/
+    /* Tablet styles will go here */
+    .header {
+        padding-top: 34px;
+        padding-left: 75px;
+    }
+
+    button {
+        display: none; /* Hide navigation links on small screens */
+    }
+    nav { 
+        display: block;
+        padding-right: 54px;
+    }
+    nav ul {
+        display: flex;
+        list-style: none;
+        gap: 30px;
+        margin: 0;
+        padding-left: 0;
+    }
+    nav a {
+        text-decoration: none;
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+        font-weight: 600;
+        color:black;
+        line-height: 22.4px;
+        letter-spacing: 0px;
+    }
+    .recipe-text { /*it groups only the heading and paragraph.*/
+        margin-top: 225px; 
+        margin-left: 97px;
+        margin-right: 97px;
+        margin-bottom: 45px;
+    }
+    .recipe-text h1 {
+        font-size: 72px;
+        line-height: 83px;
+    }
+
+    .recipe-text p {
+    margin-top: 23px;
+        font-family: Arial, sans-serif;
+        font-weight: 400;
+        font-size: 22px;
+        line-height: 33px;
+        letter-spacing: 0px;
+    }
+
+    main img{
+        width: 617px;
+        height: 512px;
+        object-fit: cover;
+    }
+
+    .menu__item--meatball {
+        display: none;
+    }
+
+    .desktop-nav {
+        display: block;
+    }
+
+    .desktop-nav a {
+    display: flex;
+    align-items: center;
+    min-width: 42px;
+    min-height: 42px;
+    }
+}
+
+@media (min-width: 1440px) {
+    .header {
+        padding-top: 62px;
+        padding-left: 142px;
+        justify-content: flex-start; /*“Group these items on the left.” We can then use gap to control the distance between them.*/
+    }
+
+    nav { 
+        display: block;
+        padding-left: 115px;
+        /*padding-right: 826px,creates a huge empty area inside the navigation to push the links back left. That space stays 826px even when the screen width changes.;*/
+        padding-top: 0.8px;
+        padding-bottom: 1.2px;
+    }
+
+    .recipe-text { /*it groups only the heading and paragraph.*/
+        margin-top: 0px; 
+        margin-left: 97px;
+        margin-right: 97px;
+        margin-bottom: 45px;
+        max-width: 410px;
+
+    }
+    .recipe-text h1 {
+        font-size: 72px;
+        line-height: 83px;
+        margin-top:184px;
+        margin-bottom:0;
+    }
+
+    .recipe-text p {
+        margin-top: 45.8px;
+        font-family: Arial, sans-serif;
+        font-weight: 400;
+        font-size: 22px;
+        line-height: 33px;
+        letter-spacing: 0px;
+    }
+
+    nav ul {
+        display: flex;
+        list-style: none;
+        gap: 28px;
+        margin: 0;
+        padding-left: 0;
+    }
+
+    main img{
+        width: 576px;
+        height: 648px;
+        object-fit: cover;
+    }
+
+    main{
+        display: flex;
+        margin-top: 0px;
+        margin-right: 144px;
+    }
+
+    recipe-text { /*it groups only the heading and paragraph.*/
+        /*margin-top: 184px;*/
+        margin-left: 136px;
+        margin-right: 888px;
+        margin-bottom: 287px;
+    }
+
+    .mainpage {
+        position: relative;
+    }
+
+    picture {
+        top: 81px;
+        right: 144px;
+        position: absolute;
+    }
+
+    .scroll-arrow {
+        display: block;
+        position: absolute;
+        font-size: 30px;
+        left: 144px;
+        top: 689px;
+    }
+}

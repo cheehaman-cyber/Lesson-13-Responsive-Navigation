@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipes</title>
+    <script src="https://kit.fontawesome.com/ad4071b035.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style/normalize.css">
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+    <div class="mainpage">
+        <header class="header">
+            <a href="index.html">
+                <img src="images/Logo.svg" alt="Head. home">
+            </a>
+
+            <details class="menu__item--meatball">
+                <summary aria-label="Main navigation">⋯</summary>
+
+                <nav>
+                    <ul>
+                        <li><a href="#">Works</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Contacts</a></li>
+                    </ul>
+                </nav>
+            </details>
+
+            <nav class="desktop-nav">
+                <ul>
+                    <li><a href="#">Works</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Contacts</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        <main>
+            <div class="recipe-text">
+                <h1>Recipes</h1>
+                <p>Simple, tasty recipes for everyday cooking, made with real ingredient.</p>
+            </div>
+            <picture>
+                <source media="(min-width: 1440px)" srcset="images/soup-desktop.jpg">
+                <source media="(min-width: 768px)" srcset="images/soup-tablet.jpg">
+                <source media="(min-width: 1440px)" srcset="images/soup-desktop.jpg">
+                <img src="images/Bitmap.jpg" alt="A bowl of pumpkin soup">
+            </picture>  
+        </main> 
+        <i class="fa-solid fa-arrow-down-long scroll-arrow"></i>
+    </div>     
+</body>
+</html>
